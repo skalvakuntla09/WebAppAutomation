@@ -1,4 +1,4 @@
-# HubDoc's [WebdriverIO](https://webdriver.io/) UI Automation Framework
+# [WebdriverIO](https://webdriver.io/) Sample UI Automation Framework
 
 ### Tech
 
@@ -22,4 +22,4 @@ $ npm install
 $ npm test
 $ npm run generateReport
 ```
-Ref# Added tutorial video in the repo
+### Ref# Added tutorial video in the repository
