@@ -1,0 +1,13 @@
+[
+  {
+    "title": "Login Into Application With Valid Credentials",
+    "email": "srikanth.kalvakuntla09@gmail.com",
+    "password": "@Hubdoctest9@",
+    "notes": "Grocery recipt purchased from walmart",
+    "documentType": "Receipt",
+    "suplier": "Walmart",
+    "invoiceNumber": "34543654",
+    "date": "07-01-2020",
+    "amount": 9.99
+  }
+]
