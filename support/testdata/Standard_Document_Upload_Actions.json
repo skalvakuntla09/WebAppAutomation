@@ -1,13 +1,12 @@
-[
-  {
-    "title": "Login Into Application With Valid Credentials",
+{
+    "title": "Standard Document Uplaod (jpg image)",
     "email": "srikanth.kalvakuntla09@gmail.com",
     "password": "@Hubdoctest9@",
-    "notes": "Grocery recipt purchased from walmart",
+    "documentLocation": "../support/docs/grocery_receipt.jpg",
+    "notes": "Grocery receipt purchased from store",
     "documentType": "Receipt",
     "suplier": "Walmart",
     "invoiceNumber": "34543654",
     "date": "07-01-2020",
     "amount": 9.99
-  }
-]
+}

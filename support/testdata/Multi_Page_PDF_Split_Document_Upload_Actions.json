@@ -1,0 +1,13 @@
+{
+    "title": "Multi Page PDF Split Document Uplaod (pdf image)",
+    "email": "srikanth.kalvakuntla09@gmail.com",
+    "password": "@Hubdoctest9@",
+    "documentLocation": "../support/docs/cheque.pdf",
+    "numberOfPages": 2,
+    "notes": "Check deposit in BMO bank checkings account",
+    "documentType": "Receipt",
+    "suplier": "BMO",
+    "invoiceNumber": "6575899",
+    "date": "07-02-2020",
+    "amount": 3.00
+  }

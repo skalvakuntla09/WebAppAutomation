@@ -1,20 +1,21 @@
 import LoginPage from '../pageobjects/login.page'
 import DashboardPage from '../pageobjects/dashboard.page'
-import { constants } from "../support/constants";
 
-const testDataObject = require('../support/testdata/Document_Upload_Actions.json');
+const testDataObject = require('../support/testdata/Standard_Document_Upload_Actions.json');
 
-describe('Upload Document Actions', () => {
-    testDataObject.forEach(function (element) {
+describe('Upload Standard Document And Perform Actions: ', () => {
         
-        before(function () {
+        it('login into application', () => {
             LoginPage.open();
-            LoginPage.loginSuccess(element['email'], element['password']);
+            LoginPage.loginSuccess(testDataObject.email, testDataObject.password);
         })
 
-        it('upload document', () => {
+        it('select document upload option from dashboard', () => {
             DashboardPage.clickDocumentUpload();
-            DashboardPage.uploadDocumentSuccessful(constants.IMAGE_FILE_PATH);
+        });
+
+        it('upload standard document', () => {
+            DashboardPage.uploadDocumentSuccessful(testDataObject.documentLocation);
             DashboardPage.closeDocumentFrame();
         });
 
@@ -32,7 +33,7 @@ describe('Upload Document Actions', () => {
         });
 
         it('add notes to document', () => {
-            DashboardPage.addNotesToTheDocument(element['notes']);
+            DashboardPage.addNotesToTheDocument(testDataObject.notes);
         });
 
         it('download document', () => {
@@ -41,15 +42,14 @@ describe('Upload Document Actions', () => {
 
         it('edit document', () => {
             DashboardPage.editDocument();
-            DashboardPage.enterTransactionDetails(element['documentType'], element['suplier'], element['invoiceNumber'], element['date'], element['amount']);
+            DashboardPage.enterTransactionDetails(testDataObject.documentType, testDataObject.suplier, testDataObject.invoiceNumber, testDataObject.date, testDataObject.amount);
         });
 
         it('assert document details', () => {
-            DashboardPage.assertDocumentDetails(element['suplier'], element['date']);
+            DashboardPage.assertDocumentDetails(testDataObject.suplier, testDataObject.date);
         });
 
         it('delete document', () => {
             DashboardPage.deleteSelectedDocument();
         });
-    });
 })

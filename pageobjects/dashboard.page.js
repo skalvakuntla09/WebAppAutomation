@@ -10,6 +10,7 @@ class DashboardPage extends Page {
      */
     get uploadDocument() { return $('#add-receipt') }
 
+    get clickMultiPagePDFSplit() { return $('#right-upload-option') }
     get browseFileUpload() { return $('//*[@id="uploadifive-file-upload"]/input[2]') }
     get fileUploadComplete() { return $('.uploadifive-queue-item.complete') }
     get closeUploadFrame() { return $('.close-modal') }
@@ -25,13 +26,13 @@ class DashboardPage extends Page {
     get clickMarkAsPaid() { return $('#mark-as-paid') }
 
     get clickNotes() { return $('//*[@id="add-notes"]') }
-    get addANote() { return $('//*[@id="notes"]/textarea') }
+    get addANote() { return $('#notes > textarea') }
     get saveNote() { return $('//*[@id="notes"]/button') }
     get successfulNotesSaved() { return $('.note-save-status') }
 
     get downloadButton() { return $('[title="Download"]') }
 
-    get clickEditDocument() { return $('//*[@id="editor-button"]/span/i') }
+    get clickEditDocument() { return $('#editor-button > span') }
 
     get selectDocumentType() { return $('//*[@id="editor-document-type-div"]/div[1]/input') }
     get selectSupplier() { return $('//*[@id="editor-vendor-id-div"]/div[1]/input') }
@@ -53,6 +54,12 @@ class DashboardPage extends Page {
     clickDocumentUpload() {
         this.uploadDocument.waitForExist();
         this.uploadDocument.click();
+    }
+
+    //Select Multi page PDF option from document option
+    selectMultipPagePDFOption() {
+        this.clickMultiPagePDFSplit.waitForExist();
+        this.clickMultiPagePDFSplit.click();
     }
 
     //Upload documents form the pop-up
@@ -99,9 +106,11 @@ class DashboardPage extends Page {
 
     //Add and save notes the uploaded document
     addNotesToTheDocument(note) {
-        this.clickNotes.waitForExist();
+        this.clickNotes.waitForClickable();
         this.clickNotes.click();
+        this.addANote.waitForExist();
         this.addANote.setValue(note);
+        this.saveNote.waitForClickable();
         this.saveNote.click();
     }
 
@@ -112,6 +121,7 @@ class DashboardPage extends Page {
 
     //Edit the selected document
     editDocument() {
+        this.clickEditDocument.waitForExist();
         this.clickEditDocument.click();
     }
 

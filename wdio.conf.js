@@ -17,7 +17,8 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './specs/*.spec.js'
+        './specs/standard.document.upload.actions.spec.js',
+        './specs/multi.page.pdf.split.document.upload.actions.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -39,7 +40,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
